@@ -1,0 +1,99 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="res\1.png" />
+    <None Remove="res\2.png" />
+    <None Remove="res\3.png" />
+    <None Remove="res\4.png" />
+    <None Remove="res\5.png" />
+    <None Remove="res\ikona_dom.png" />
+    <None Remove="res\logo.png" />
+    <None Remove="res\logo_s.png" />
+    <None Remove="res\Obrazki\Emocje\1.png" />
+    <None Remove="res\Obrazki\Emocje\1Black.png" />
+    <None Remove="res\Obrazki\Emocje\2.png" />
+    <None Remove="res\Obrazki\Emocje\2Black.png" />
+    <None Remove="res\Obrazki\Emocje\3.png" />
+    <None Remove="res\Obrazki\Emocje\3Black.png" />
+    <None Remove="res\Obrazki\Emocje\4.png" />
+    <None Remove="res\Obrazki\Emocje\4Black.png" />
+    <None Remove="res\Obrazki\Emocje\5.png" />
+    <None Remove="res\Obrazki\Emocje\5Black.png" />
+    <None Remove="res\Obrazki\ikonka.png" />
+    <None Remove="res\Obrazki\konto.png" />
+    <None Remove="res\Obrazki\kontoBlack.png" />
+    <None Remove="res\Obrazki\Logo.png" />
+    <None Remove="res\Obrazki\logoNapis.png" />
+    <None Remove="res\Obrazki\logoNapisBlack.png" />
+    <None Remove="res\Obrazki\podświetleniePrzycisku.png" />
+    <None Remove="res\Obrazki\statystyki.png" />
+    <None Remove="res\Obrazki\statystykiBlack.png" />
+    <None Remove="res\Obrazki\stronaGłówna.png" />
+    <None Remove="res\Obrazki\stronaGłównaBlack.png" />
+    <None Remove="res\Obrazki\trybDzien.png" />
+    <None Remove="res\Obrazki\trybNoc.png" />
+    <None Remove="res\tryb_nocny.png" />
+    <None Remove="res\ustawienia.png" />
+    <None Remove="res\wykres.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="LChart.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="LChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveChartsCore.SkiaSharpView" Version="2.0.0-rc6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="res\1.png" />
+    <Resource Include="res\2.png" />
+    <Resource Include="res\3.png" />
+    <Resource Include="res\4.png" />
+    <Resource Include="res\5.png" />
+    <Resource Include="res\ikona_dom.png" />
+    <Resource Include="res\logo.png" />
+    <Resource Include="res\logo_s.png" />
+    <Resource Include="res\Obrazki\Emocje\1.png" />
+    <Resource Include="res\Obrazki\Emocje\1Black.png" />
+    <Resource Include="res\Obrazki\Emocje\2.png" />
+    <Resource Include="res\Obrazki\Emocje\2Black.png" />
+    <Resource Include="res\Obrazki\Emocje\3.png" />
+    <Resource Include="res\Obrazki\Emocje\3Black.png" />
+    <Resource Include="res\Obrazki\Emocje\4.png" />
+    <Resource Include="res\Obrazki\Emocje\4Black.png" />
+    <Resource Include="res\Obrazki\Emocje\5.png" />
+    <Resource Include="res\Obrazki\Emocje\5Black.png" />
+    <Resource Include="res\Obrazki\ikonka.png" />
+    <Resource Include="res\Obrazki\konto.png" />
+    <Resource Include="res\Obrazki\kontoBlack.png" />
+    <Resource Include="res\Obrazki\Logo.png" />
+    <Resource Include="res\Obrazki\logoNapis.png" />
+    <Resource Include="res\Obrazki\logoNapisBlack.png" />
+    <Resource Include="res\Obrazki\podświetleniePrzycisku.png" />
+    <Resource Include="res\Obrazki\statystyki.png" />
+    <Resource Include="res\Obrazki\statystykiBlack.png" />
+    <Resource Include="res\Obrazki\stronaGłówna.png" />
+    <Resource Include="res\Obrazki\stronaGłównaBlack.png" />
+    <Resource Include="res\Obrazki\trybDzien.png" />
+    <Resource Include="res\Obrazki\trybNoc.png" />
+    <Resource Include="res\tryb_nocny.png" />
+    <Resource Include="res\ustawienia.png" />
+    <Resource Include="res\wykres.png" />
+  </ItemGroup>
+
+</Project>
