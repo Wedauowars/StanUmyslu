@@ -37,7 +37,7 @@
                                     Margin="10">
 
                             <Image Source="{TemplateBinding Image}"
-                                   Margin="1"/>
+                                   Margin="1" RenderOptions.BitmapScalingMode="HighQuality"/>
 
                             <TextBlock Text="{TemplateBinding Text}"
                                        FontSize="18"

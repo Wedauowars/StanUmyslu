@@ -14,7 +14,7 @@
             <RowDefinition Height="0.2*" MinHeight="90"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" ShowGridLines="True" Background="#e9e9e9">
-            <Image Source="/res/Obrazki/ikonka.png" Margin="5"/>
+            <Image Source="/res/Obrazki/Bright/logoNapis.png" Margin="5" RenderOptions.BitmapScalingMode="HighQuality"/>
             <TextBlock Text="🔥Passa: " FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30, 0, 0, 0" FontFamily="Comic Sans MS" x:Name="pasta"/>
             <local:RButton Text="" Image="/res/Obrazki/Dark/trybNoc.png" CornerRadius="20" Width="80" Height="80" Grid.Column="0" Click="trybnoc_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0">
                 <local:RButton.Background>
@@ -37,7 +37,7 @@
         </Grid>
         <!-- Strona główna -->
         <!-- Strona główna -->
-        <Grid Grid.Row="1" ShowGridLines="True" Visibility="Visible" x:Name="strona1">
+        <Grid Grid.Row="1" ShowGridLines="True" Visibility="Collapsed" x:Name="strona1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -70,7 +70,7 @@
         </Grid>
         <!-- Strona 2 -->
         <!-- Strona 2 -->
-        <Grid Grid.Row="1" ShowGridLines="True" Visibility="Collapsed" x:Name="strona2">
+        <Grid Grid.Row="1" ShowGridLines="True" Visibility="Visible" x:Name="strona2">
             <Grid.RowDefinitions>
                 <RowDefinition MinHeight="140"></RowDefinition>
                 <RowDefinition Height="999*"></RowDefinition>

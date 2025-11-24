@@ -48,7 +48,7 @@ namespace konkurs
                 new LineSeries
                 {
                     Title = "Nastrój",
-                    Values = new ChartValues<double> { 6, 7, 6, 7, 6, 7 }
+                    Values = new ChartValues<double> { 1, 2, 3, 4, 5, 6 }
                 }
             };
             Chart3.Labels = new[] { "19.11", "20.11", "21.11", "22.11", "23.11", "24.11" };
@@ -69,9 +69,9 @@ namespace konkurs
             var dict = new ResourceDictionary();
 
             if (tn)
-                dict.Source = new Uri("Themes/NightTheme.xaml", UriKind.Relative);
+                dict.Source = new Uri("Themes/Dark.xaml", UriKind.Relative);
             else
-                dict.Source = new Uri("Themes/DayTheme.xaml", UriKind.Relative);
+                dict.Source = new Uri("Themes/Bright.xaml", UriKind.Relative);
 
             // Replace theme dictionary
             Application.Current.Resources.MergedDictionaries[0] = dict;
