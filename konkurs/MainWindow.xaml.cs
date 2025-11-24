@@ -34,18 +34,24 @@ namespace konkurs
                 tryb_nocny = false;
             }
 
-            LineSeriesCollection = new SeriesCollection
+            Chart1.Series = new SeriesCollection
             {
                 new LineSeries
                 {
                     Title = "Nastrój",
-                    Values = new ChartValues<double> { 3, 5, 7, 4, 6, 8, 67 }
+                    Values = new ChartValues<double> { 3, 5, 7, 4, 6, 8 }
                 }
             };
-
-            Labels = new[] { "18.11", "19.11", "20.11", "21.11", "22.11", "23.11", "24.11" };
-
-            DataContext = this;
+            Chart3.Labels = new[] { "19.11", "20.11", "21.11", "22.11", "23.11", "24.11" };
+            Chart3.Series = new SeriesCollection
+{
+                new LineSeries
+                {
+                    Title = "Nastrój",
+                    Values = new ChartValues<double> { 6, 7, 6, 7, 6, 7 }
+                }
+            };
+            Chart3.Labels = new[] { "19.11", "20.11", "21.11", "22.11", "23.11", "24.11" };
         }
         private void ust_Click(object sender, RoutedEventArgs e)
         {
