@@ -4,32 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:konkurs"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="Stan Umysłu" Height="720" Width="1280" MinHeight="700" MinWidth="800">
-    <Grid ShowGridLines="True" Background="Blue" x:Name="cont">
+    <Grid ShowGridLines="True" Background="#f2f2f2" x:Name="cont">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*" MinHeight="90"></RowDefinition>
             <RowDefinition Height="67.67*"></RowDefinition>
             <RowDefinition Height="0.2*" MinHeight="90"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" ShowGridLines="True">
+        <Grid Grid.Row="0" ShowGridLines="True" Background="#e9e9e9">
             <Image Source="/res/Obrazki/ikonka.png" Margin="5"/>
             <TextBlock Text="🔥Passa: " FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30, 0, 0, 0" FontFamily="Comic Sans MS" x:Name="pasta"/>
             <local:RButton Text="" Image="/res/Obrazki/trybNoc.png" CornerRadius="20" Width="80" Height="80" Grid.Column="0" Click="trybnoc_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0">
                 <local:RButton.Background>
                     <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
-                        <GradientStop Color="Blue" Offset="0"/>
-                        <GradientStop Color="Green" Offset="0.5"/>
-                        <GradientStop Color="Red" Offset="1"/>
+                        <GradientStop Color="#209bbf" Offset="0"/>
+                        <GradientStop Color="#7953ce" Offset="0.5"/>
+                        <GradientStop Color="#df00e0" Offset="1"/>
                     </LinearGradientBrush>
                 </local:RButton.Background>
             </local:RButton>
             <local:RButton Text="" Image="/res/Obrazki/trybDzien.png" CornerRadius="20" Width="80" Height="80" Grid.Column="0" Click="ust_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 100, 0">
                 <local:RButton.Background>
                     <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
-                        <GradientStop Color="Blue" Offset="0"/>
-                        <GradientStop Color="Green" Offset="0.5"/>
-                        <GradientStop Color="Red" Offset="1"/>
+                        <GradientStop Color="#209bbf" Offset="0"/>
+                        <GradientStop Color="#7953ce" Offset="0.5"/>
+                        <GradientStop Color="#df00e0" Offset="1"/>
                     </LinearGradientBrush>
                 </local:RButton.Background>
             </local:RButton>
@@ -46,18 +47,35 @@
                     <RowDefinition MinHeight="90"></RowDefinition>
                     <RowDefinition Height="999*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Dzień dobry ${imie}!" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="30, 10, 0, 0" FontWeight="Bold" />
+                <TextBlock Text="Ok" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="30, 10, 0, 0" FontWeight="Bold" />
             <TextBlock Text="Jak sie dziś czujesz?" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="24" Margin="30, 0, 0, 10"/>
                 <Grid Grid.Row="1">
-                    <RadioButton Margin="20, 50, 0 ,0" FontSize="24">ok</RadioButton>
-                    <RadioButton Margin="20, 100, 0 ,0" FontSize="24">nie ok</RadioButton>
-                    <RadioButton Margin="20, 150, 0 ,0" FontSize="24">3</RadioButton>
-                    <RadioButton Margin="20, 200, 0 ,0" FontSize="24">4</RadioButton>
-                    <RadioButton Margin="20, 250, 0 ,0" FontSize="24">5s</RadioButton>
+                    <Grid Margin="30">
+                        <Border Name="mask" Background="#e9e9e9" CornerRadius="20"/>
+                        <RadioButton Margin="20, 50, 0 ,0" FontSize="24">ok</RadioButton>
+                        <RadioButton Margin="20, 100, 0 ,0" FontSize="24">nie ok</RadioButton>
+                        <RadioButton Margin="20, 150, 0 ,0" FontSize="24">3</RadioButton>
+                        <RadioButton Margin="20, 200, 0 ,0" FontSize="24">4</RadioButton>
+                        <RadioButton Margin="20, 250, 0 ,0" FontSize="24">5s</RadioButton>
+                    </Grid>
                 </Grid>
             </Grid>
             <Grid Grid.Column="1">
-                <Image Source="/res/wykres.png" Margin="20"/>
+                <!--Wykres-->
+                <!--Wykres-->
+                <lvc:CartesianChart Series="{Binding LineSeriesCollection}"
+                            LegendLocation="Bottom">
+
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Title="Dzień"
+                            Labels="{Binding Labels}" />
+                    </lvc:CartesianChart.AxisX>
+
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="Nastrój" />
+                    </lvc:CartesianChart.AxisY>
+
+                </lvc:CartesianChart>
             </Grid>
         </Grid>
         <!-- Strona 2 -->
@@ -68,12 +86,11 @@
                 <RowDefinition Height="999*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" ShowGridLines="True">
-                <TextBlock Text="Twoi nastori tis!" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="48" Margin="30, 20, 0, 0" FontWeight="Bold" />
-                <TextBlock Text="Kak dzieła?" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="32" Margin="30, 0, 0, 20"/>
+                <TextBlock Text="Czas to tylko iluzja kontroli" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="48" Margin="30, 20, 0, 0" FontWeight="Bold" />
+                <TextBlock Text="a ty dajesz się kontrolować" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="32" Margin="30, 0, 0, 20"/>
             </Grid>
             <Grid Grid.Row="1" ShowGridLines="True">
-                <TextBlock Text="2222222222"/>
-                <Image Source="/res/logo.png"/>
+                <TextBlock Text="2"/>
                 <Image Source="/res/wykres.png" Margin="20" Width="2000"/>
             </Grid>
         </Grid>
@@ -85,12 +102,11 @@
                 <RowDefinition Height="999*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" ShowGridLines="True">
-                <TextBlock Text="Twoi nastori tis!" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="48" Margin="30, 20, 0, 0" FontWeight="Bold" />
-                <TextBlock Text="Kak dzieła?" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="32" Margin="30, 0, 0, 20"/>
+                <TextBlock Text="Greckim" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="48" Margin="30, 20, 0, 0" FontWeight="Bold" />
+                <TextBlock Text="jestem p" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="32" Margin="30, 0, 0, 20"/>
             </Grid>
             <Grid Grid.Row="1" ShowGridLines="True">
-                <TextBlock Text="2"/>
-                <Image Source="/res/wykres.png" Margin="20" Width="2000"/>
+
             </Grid>
         </Grid>
         <!-- Strona Ustawienia -->
@@ -101,7 +117,7 @@
         </Grid>
 
 
-        <Grid Grid.Row="2" ShowGridLines="False">
+        <Grid Grid.Row="2" ShowGridLines="False" Background="#e9e9e9">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -111,9 +127,9 @@
             <local:RButton Text="" Image="/res/Obrazki/stronaGłówna.png" CornerRadius="20" Width="160" Height="80" Grid.Column="0" Click="RButton_Click_1">
                 <local:RButton.Background>
                     <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
-                        <GradientStop Color="Blue" Offset="0"/>
-                        <GradientStop Color="Green" Offset="0.5"/>
-                        <GradientStop Color="Red" Offset="1"/>
+                        <GradientStop Color="#209bbf" Offset="0"/>
+                        <GradientStop Color="#7953ce" Offset="0.5"/>
+                        <GradientStop Color="#df00e0" Offset="1"/>
                     </LinearGradientBrush>
                 </local:RButton.Background>
             </local:RButton>
@@ -121,9 +137,9 @@
             <local:RButton Text="" Image="/res/Obrazki/Emocje/4.png" CornerRadius="20" Width="160" Height="80" Grid.Column="1" Click="RButton_Click_2">
                 <local:RButton.Background>
                     <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
-                        <GradientStop Color="Blue" Offset="0"/>
-                        <GradientStop Color="Green" Offset="0.5"/>
-                        <GradientStop Color="Red" Offset="1"/>
+                        <GradientStop Color="#209bbf" Offset="0"/>
+                        <GradientStop Color="#7953ce" Offset="0.5"/>
+                        <GradientStop Color="#df00e0" Offset="1"/>
                     </LinearGradientBrush>
                 </local:RButton.Background>
             </local:RButton>
@@ -131,9 +147,9 @@
             <local:RButton Text="" Image="/res/Obrazki/Statystyki.png" CornerRadius="20" Width="160" Height="80" Grid.Column="2" Click="RButton_Click_3">
                 <local:RButton.Background>
                     <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
-                        <GradientStop Color="Blue" Offset="0"/>
-                        <GradientStop Color="Green" Offset="0.5"/>
-                        <GradientStop Color="Red" Offset="1.2"/>
+                        <GradientStop Color="#209bbf" Offset="0"/>
+                        <GradientStop Color="#7953ce" Offset="0.5"/>
+                        <GradientStop Color="#df00e0" Offset="1"/>
                     </LinearGradientBrush>
                 </local:RButton.Background>
             </local:RButton>

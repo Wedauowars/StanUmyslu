@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using LiveCharts.Wpf;
+using LiveCharts;
+using System.Reflection.Emit;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,11 +19,33 @@ namespace konkurs
     /// </summary>
     public partial class MainWindow : Window
     {
+        public SeriesCollection LineSeriesCollection { get; set; }
+        public string[] Labels { get; set; }
         bool tryb_nocny = false;
         int passa = 0;
         public MainWindow()
         {
             InitializeComponent();
+            if (!tryb_nocny) {
+                cont.Background = Brushes.White;
+                tryb_nocny = true;
+            } else {
+                cont.Background = Brushes.Blue;
+                tryb_nocny = false;
+            }
+
+            LineSeriesCollection = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Nastrój",
+                    Values = new ChartValues<double> { 3, 5, 7, 4, 6, 8, 67 }
+                }
+            };
+
+            Labels = new[] { "18.11", "19.11", "20.11", "21.11", "22.11", "23.11", "24.11" };
+
+            DataContext = this;
         }
         private void Strona1(object sender, RoutedEventArgs e) {
             strona1.Visibility = Visibility.Visible;
@@ -51,6 +76,7 @@ namespace konkurs
         {
             strona1.Visibility = Visibility.Collapsed;
             strona2.Visibility = Visibility.Collapsed;
+            strona3.Visibility = Visibility.Collapsed;
             strona_ust.Visibility = Visibility.Visible;
         }
         private void trybnoc_Click(object sender, RoutedEventArgs e)
