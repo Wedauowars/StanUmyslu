@@ -62,7 +62,6 @@
             </Grid>
             <Grid Grid.Column="1">
                 <!--Wykres-->
-                <!--Wykres-->
                 <lvc:CartesianChart Series="{Binding LineSeriesCollection}"
                             LegendLocation="Bottom">
 
