@@ -47,31 +47,6 @@ namespace konkurs
 
             DataContext = this;
         }
-        private void Strona1(object sender, RoutedEventArgs e) {
-            strona1.Visibility = Visibility.Visible;
-            strona2.Visibility = Visibility.Collapsed;
-            strona3.Visibility = Visibility.Collapsed;
-            strona_ust.Visibility = Visibility.Collapsed;
-
-        }
-        private void Strona2(object sender, MouseButtonEventArgs e) {
-            strona1.Visibility = Visibility.Collapsed;
-            strona2.Visibility = Visibility.Visible;
-            strona3.Visibility = Visibility.Collapsed;
-            strona_ust.Visibility = Visibility.Collapsed;
-        }
-        private void Strona3(object sender, MouseButtonEventArgs e) {
-            strona1.Visibility = Visibility.Collapsed;
-            strona2.Visibility = Visibility.Collapsed;
-            strona3.Visibility = Visibility.Visible;
-            strona_ust.Visibility = Visibility.Collapsed;
-        }
-        private void Strona4(object sender, MouseButtonEventArgs e) {
-            MessageBox.Show("Trigga4");
-        }
-        private void Strona5(object sender, MouseButtonEventArgs e) {
-            MessageBox.Show("Trigga5");
-        }
         private void ust_Click(object sender, RoutedEventArgs e)
         {
             strona1.Visibility = Visibility.Collapsed;
@@ -81,21 +56,19 @@ namespace konkurs
         }
         private void trybnoc_Click(object sender, RoutedEventArgs e)
         {
-            if (!tryb_nocny)
-            {
-                cont.Background = Brushes.White;
-                tryb_nocny = true;
-            }
-            else
-            {
-                cont.Background = Brushes.Blue;
-                tryb_nocny = false;
-            }
+            tryb_nocny = !tryb_nocny;
+            ToggleTheme(tryb_nocny);
         }
-        private void pasta_btd(object sender, RoutedEventArgs e)
-        {
-            passa++;
-            pasta.Text = "🔥Passa: " + passa + " dni";
+        private void ToggleTheme(bool tn) {
+            var dict = new ResourceDictionary();
+
+            if (tn)
+                dict.Source = new Uri("Themes/NightTheme.xaml", UriKind.Relative);
+            else
+                dict.Source = new Uri("Themes/DayTheme.xaml", UriKind.Relative);
+
+            // Replace theme dictionary
+            Application.Current.Resources.MergedDictionaries[0] = dict;
         }
         private void RButton_Click_1(object sender, RoutedEventArgs e) {
             strona1.Visibility = Visibility.Visible;

@@ -16,18 +16,18 @@
         <Grid Grid.Row="0" ShowGridLines="True" Background="#e9e9e9">
             <Image Source="/res/Obrazki/ikonka.png" Margin="5"/>
             <TextBlock Text="🔥Passa: " FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30, 0, 0, 0" FontFamily="Comic Sans MS" x:Name="pasta"/>
-            <local:RButton Text="" Image="/res/Obrazki/trybNoc.png" CornerRadius="20" Width="80" Height="80" Grid.Column="0" Click="trybnoc_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0">
+            <local:RButton Text="" Image="/res/Obrazki/Dark/trybNoc.png" CornerRadius="20" Width="80" Height="80" Grid.Column="0" Click="trybnoc_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0">
                 <local:RButton.Background>
-                    <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                    <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
                         <GradientStop Color="#209bbf" Offset="0"/>
                         <GradientStop Color="#7953ce" Offset="0.5"/>
                         <GradientStop Color="#df00e0" Offset="1"/>
                     </LinearGradientBrush>
                 </local:RButton.Background>
             </local:RButton>
-            <local:RButton Text="" Image="/res/Obrazki/trybDzien.png" CornerRadius="20" Width="80" Height="80" Grid.Column="0" Click="ust_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 100, 0">
+            <local:RButton Text="" Image="/res/Obrazki/Bright/trybDzien.png" CornerRadius="20" Width="80" Height="80" Grid.Column="0" Click="ust_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 100, 0">
                 <local:RButton.Background>
-                    <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                    <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
                         <GradientStop Color="#209bbf" Offset="0"/>
                         <GradientStop Color="#7953ce" Offset="0.5"/>
                         <GradientStop Color="#df00e0" Offset="1"/>
@@ -61,20 +61,23 @@
                 </Grid>
             </Grid>
             <Grid Grid.Column="1">
-                <!--Wykres-->
-                <lvc:CartesianChart Series="{Binding LineSeriesCollection}"
+                    <!--Wykres-->
+                <Grid Margin="30">
+                    <Border Name="mask1" Background="#e9e9e9" CornerRadius="20"/>
+                    <lvc:CartesianChart Series="{Binding LineSeriesCollection}"
                             LegendLocation="Bottom">
 
-                    <lvc:CartesianChart.AxisX>
-                        <lvc:Axis Title="Dzień"
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Dzień"
                             Labels="{Binding Labels}" />
-                    </lvc:CartesianChart.AxisX>
+                        </lvc:CartesianChart.AxisX>
 
-                    <lvc:CartesianChart.AxisY>
-                        <lvc:Axis Title="Nastrój" />
-                    </lvc:CartesianChart.AxisY>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Nastrój" />
+                        </lvc:CartesianChart.AxisY>
 
-                </lvc:CartesianChart>
+                    </lvc:CartesianChart>
+                </Grid>
             </Grid>
         </Grid>
         <!-- Strona 2 -->
@@ -123,9 +126,9 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <local:RButton Text="" Image="/res/Obrazki/stronaGłówna.png" CornerRadius="20" Width="160" Height="80" Grid.Column="0" Click="RButton_Click_1">
+            <local:RButton Text="" Image="/res/Obrazki/Bright/stronaGłówna.png" CornerRadius="20" Width="160" Height="80" Grid.Column="0" Click="RButton_Click_1">
                 <local:RButton.Background>
-                    <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                    <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
                         <GradientStop Color="#209bbf" Offset="0"/>
                         <GradientStop Color="#7953ce" Offset="0.5"/>
                         <GradientStop Color="#df00e0" Offset="1"/>
@@ -133,9 +136,9 @@
                 </local:RButton.Background>
             </local:RButton>
 
-            <local:RButton Text="" Image="/res/Obrazki/Emocje/4.png" CornerRadius="20" Width="160" Height="80" Grid.Column="1" Click="RButton_Click_2">
+            <local:RButton Text="" Image="/res/Obrazki/Bright/Emocje/4.png" CornerRadius="20" Width="160" Height="80" Grid.Column="1" Click="RButton_Click_2">
                 <local:RButton.Background>
-                    <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                    <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
                         <GradientStop Color="#209bbf" Offset="0"/>
                         <GradientStop Color="#7953ce" Offset="0.5"/>
                         <GradientStop Color="#df00e0" Offset="1"/>
@@ -143,9 +146,9 @@
                 </local:RButton.Background>
             </local:RButton>
 
-            <local:RButton Text="" Image="/res/Obrazki/Statystyki.png" CornerRadius="20" Width="160" Height="80" Grid.Column="2" Click="RButton_Click_3">
+            <local:RButton Text="" Image="/res/Obrazki/Bright/Statystyki.png" CornerRadius="20" Width="160" Height="80" Grid.Column="2" Click="RButton_Click_3">
                 <local:RButton.Background>
-                    <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                    <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
                         <GradientStop Color="#209bbf" Offset="0"/>
                         <GradientStop Color="#7953ce" Offset="0.5"/>
                         <GradientStop Color="#df00e0" Offset="1"/>

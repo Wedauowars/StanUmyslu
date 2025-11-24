@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="res\Obrazki\Emocje\**" />
+    <EmbeddedResource Remove="res\Obrazki\Emocje\**" />
+    <None Remove="res\Obrazki\Emocje\**" />
+    <Page Remove="res\Obrazki\Emocje\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="LChart.cs" />
   </ItemGroup>
 
@@ -21,16 +28,28 @@
     <None Remove="res\ikona_dom.png" />
     <None Remove="res\logo.png" />
     <None Remove="res\logo_s.png" />
-    <None Remove="res\Obrazki\Emocje\1.png" />
-    <None Remove="res\Obrazki\Emocje\1Black.png" />
-    <None Remove="res\Obrazki\Emocje\2.png" />
-    <None Remove="res\Obrazki\Emocje\2Black.png" />
-    <None Remove="res\Obrazki\Emocje\3.png" />
-    <None Remove="res\Obrazki\Emocje\3Black.png" />
-    <None Remove="res\Obrazki\Emocje\4.png" />
-    <None Remove="res\Obrazki\Emocje\4Black.png" />
-    <None Remove="res\Obrazki\Emocje\5.png" />
-    <None Remove="res\Obrazki\Emocje\5Black.png" />
+    <None Remove="res\Obrazki\Bright\Emocje\1.png" />
+    <None Remove="res\Obrazki\Bright\Emocje\2.png" />
+    <None Remove="res\Obrazki\Bright\Emocje\3.png" />
+    <None Remove="res\Obrazki\Bright\Emocje\4.png" />
+    <None Remove="res\Obrazki\Bright\Emocje\5.png" />
+    <None Remove="res\Obrazki\Bright\konto.png" />
+    <None Remove="res\Obrazki\Bright\logoNapis.png" />
+    <None Remove="res\Obrazki\Bright\statystyki.png" />
+    <None Remove="res\Obrazki\Bright\stronaGłówna.png" />
+    <None Remove="res\Obrazki\Bright\trybDzien.png" />
+    <None Remove="res\Obrazki\Bright\trybNoc.png" />
+    <None Remove="res\Obrazki\Dark\Emocje\1.png" />
+    <None Remove="res\Obrazki\Dark\Emocje\2.png" />
+    <None Remove="res\Obrazki\Dark\Emocje\3.png" />
+    <None Remove="res\Obrazki\Dark\Emocje\4.png" />
+    <None Remove="res\Obrazki\Dark\Emocje\5.png" />
+    <None Remove="res\Obrazki\Dark\konto.png" />
+    <None Remove="res\Obrazki\Dark\logoNapis.png" />
+    <None Remove="res\Obrazki\Dark\statystyki.png" />
+    <None Remove="res\Obrazki\Dark\stronaGłówna.png" />
+    <None Remove="res\Obrazki\Dark\trybDzien.png" />
+    <None Remove="res\Obrazki\Dark\trybNoc.png" />
     <None Remove="res\Obrazki\ikonka.png" />
     <None Remove="res\Obrazki\konto.png" />
     <None Remove="res\Obrazki\kontoBlack.png" />
@@ -67,29 +86,31 @@
     <Resource Include="res\ikona_dom.png" />
     <Resource Include="res\logo.png" />
     <Resource Include="res\logo_s.png" />
-    <Resource Include="res\Obrazki\Emocje\1.png" />
-    <Resource Include="res\Obrazki\Emocje\1Black.png" />
-    <Resource Include="res\Obrazki\Emocje\2.png" />
-    <Resource Include="res\Obrazki\Emocje\2Black.png" />
-    <Resource Include="res\Obrazki\Emocje\3.png" />
-    <Resource Include="res\Obrazki\Emocje\3Black.png" />
-    <Resource Include="res\Obrazki\Emocje\4.png" />
-    <Resource Include="res\Obrazki\Emocje\4Black.png" />
-    <Resource Include="res\Obrazki\Emocje\5.png" />
-    <Resource Include="res\Obrazki\Emocje\5Black.png" />
+    <Resource Include="res\Obrazki\Bright\Emocje\1.png" />
+    <Resource Include="res\Obrazki\Bright\Emocje\2.png" />
+    <Resource Include="res\Obrazki\Bright\Emocje\3.png" />
+    <Resource Include="res\Obrazki\Bright\Emocje\4.png" />
+    <Resource Include="res\Obrazki\Bright\Emocje\5.png" />
+    <Resource Include="res\Obrazki\Bright\konto.png" />
+    <Resource Include="res\Obrazki\Bright\logoNapis.png" />
+    <Resource Include="res\Obrazki\Bright\statystyki.png" />
+    <Resource Include="res\Obrazki\Bright\stronaGłówna.png" />
+    <Resource Include="res\Obrazki\Bright\trybDzien.png" />
+    <Resource Include="res\Obrazki\Bright\trybNoc.png" />
+    <Resource Include="res\Obrazki\Dark\Emocje\1.png" />
+    <Resource Include="res\Obrazki\Dark\Emocje\2.png" />
+    <Resource Include="res\Obrazki\Dark\Emocje\3.png" />
+    <Resource Include="res\Obrazki\Dark\Emocje\4.png" />
+    <Resource Include="res\Obrazki\Dark\Emocje\5.png" />
+    <Resource Include="res\Obrazki\Dark\konto.png" />
+    <Resource Include="res\Obrazki\Dark\logoNapis.png" />
+    <Resource Include="res\Obrazki\Dark\statystyki.png" />
+    <Resource Include="res\Obrazki\Dark\stronaGłówna.png" />
+    <Resource Include="res\Obrazki\Dark\trybDzien.png" />
+    <Resource Include="res\Obrazki\Dark\trybNoc.png" />
     <Resource Include="res\Obrazki\ikonka.png" />
-    <Resource Include="res\Obrazki\konto.png" />
-    <Resource Include="res\Obrazki\kontoBlack.png" />
     <Resource Include="res\Obrazki\Logo.png" />
-    <Resource Include="res\Obrazki\logoNapis.png" />
-    <Resource Include="res\Obrazki\logoNapisBlack.png" />
     <Resource Include="res\Obrazki\podświetleniePrzycisku.png" />
-    <Resource Include="res\Obrazki\statystyki.png" />
-    <Resource Include="res\Obrazki\statystykiBlack.png" />
-    <Resource Include="res\Obrazki\stronaGłówna.png" />
-    <Resource Include="res\Obrazki\stronaGłównaBlack.png" />
-    <Resource Include="res\Obrazki\trybDzien.png" />
-    <Resource Include="res\Obrazki\trybNoc.png" />
     <Resource Include="res\tryb_nocny.png" />
     <Resource Include="res\ustawienia.png" />
     <Resource Include="res\wykres.png" />
