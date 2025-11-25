@@ -30,36 +30,38 @@
         </Grid>
         <!-- Strona główna -->
         <!-- Strona główna -->
-        <Grid Grid.Row="1" ShowGridLines="False" Visibility="Collapsed" x:Name="strona1">
+        <Grid Grid.Row="1" ShowGridLines="False" Visibility="Visible" x:Name="strona1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" ShowGridLines="False">
                 <Grid.RowDefinitions>
                     <RowDefinition MinHeight="90"></RowDefinition>
                     <RowDefinition Height="999*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Dzień dobry {%s}!" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="30, 10, 0, 0" FontWeight="Bold" />
-            <TextBlock Text="Jak sie dziś czujesz?" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="24" Margin="30, 0, 0, 10"/>
+                <TextBlock Text="Dzień dobry !" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="30, 10, 0, 0" FontWeight="Bold" x:Name="dziendobry"/>
+            <TextBlock Text="Jak się dziś czujesz?" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="24" Margin="30, 0, 0, 10"/>
+                <TextBlock Text="Statystyki sprzed 24 godzin" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="36" Margin="30, 0, 0, 0" FontWeight="Bold" Grid.Column="1" />
+                <Grid Grid.Column="0" Grid.Row="1" ShowGridLines="False">
                 <Grid Grid.Row="1">
-                    <Grid Margin="30">
+                    <Grid Margin="15">
                         <Border Name="mask" Background="#e9e9e9" CornerRadius="20"/>
-                        <TextBlock Text="Notatka dla cb (3" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="32" FontWeight="Bold"/>
-                    </Grid>
+                            <TextBlock Text="Notatka" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="32" FontWeight="Bold" />
+                            <TextBox Margin="20, 50, 20, 20" FontSize="24" AcceptsReturn="True" TextWrapping="Wrap" x:Name="notatka" TextChanged="notatka_Changed"/>
+                        </Grid>
                 </Grid>
             </Grid>
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Grid.Row="1">
                     <!--Wykres-->
-                <Grid Margin="30">
-                    <Border Name="mask1" Background="#e9e9e9" CornerRadius="20"/>
-                    <local:Chart x:Name="Chart1"/>
+                    <Grid Margin="15">
+                        <Border Name="mask1" Background="#e9e9e9" CornerRadius="20"/>
+                    <lvc:CartesianChart x:Name="Chart1"/>
                 </Grid>
             </Grid>
         </Grid>
         <!-- Strona 2 -->
         <!-- Strona 2 -->
-        <Grid Grid.Row="1" ShowGridLines="False" Visibility="Visible" x:Name="strona2">
+        <Grid Grid.Row="1" ShowGridLines="False" Visibility="Collapsed" x:Name="strona2">
             <Grid.RowDefinitions>
                 <RowDefinition MinHeight="90"></RowDefinition>
                 <RowDefinition Height="999*"></RowDefinition>
@@ -81,15 +83,15 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <Image Source="/res/Obrazki/Bright/Emocje/1.png" Grid.Column="0" MouseLeftButtonDown="em1_MD"/>
+                            <Image Source="/res/Obrazki/Bright/Emocje/1.png" Grid.Column="0" MouseLeftButtonDown="em1_MD" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Tragicznie" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0" Margin="20"/>
-                            <Image Source="/res/Obrazki/Bright/Emocje/2.png" Grid.Column="1" MouseLeftButtonDown="em2_MD"/>
-                            <TextBlock Text="Słabo" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Margin="20"/>
-                            <Image Source="/res/Obrazki/Bright/Emocje/3.png" Grid.Column="2" MouseLeftButtonDown="em3_MD"/>
-                            <TextBlock Text="Tak se" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="2" Margin="20"/>
-                            <Image Source="/res/Obrazki/Bright/Emocje/4.png" Grid.Column="3" MouseLeftButtonDown="em4_MD"/>
+                            <Image Source="/res/Obrazki/Bright/Emocje/2.png" Grid.Column="1" MouseLeftButtonDown="em2_MD" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
+                            <TextBlock Text="Źle" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Margin="20"/>
+                            <Image Source="/res/Obrazki/Bright/Emocje/3.png" Grid.Column="2" MouseLeftButtonDown="em3_MD" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
+                            <TextBlock Text="Neutralnie" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="2" Margin="20"/>
+                            <Image Source="/res/Obrazki/Bright/Emocje/4.png" Grid.Column="3" MouseLeftButtonDown="em4_MD" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Dobrze" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="3" Margin="20"/>
-                            <Image Source="/res/Obrazki/Bright/Emocje/5.png" Grid.Column="4" MouseLeftButtonDown="em5_MD"/>
+                            <Image Source="/res/Obrazki/Bright/Emocje/5.png" Grid.Column="4" MouseLeftButtonDown="em5_MD" Margin="10" RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Świetnie" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="4" Margin="20"/>
                         </Grid>
                     </Grid>
@@ -104,16 +106,19 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" ShowGridLines="False">
                 <TextBlock Text="Statystyki" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="48" Margin="30, 20, 0, 0" FontWeight="Bold" />
-                <TextBlock Text="Ogólne statystyki sprzed 67 dni" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="32" Margin="30, 0, 0, 20"/>
+                <TextBlock Text="Ogólne statystyki ostatnich 40 wpisów" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="32" Margin="30, 0, 0, 20"/>
             </Grid>
             <Grid Grid.Row="1" ShowGridLines="False">
-                <local:Chart x:Name="Chart3"/>
-            </Grid>
+                    <Grid Margin="10">
+                        <Border Background="#e9e9e9" CornerRadius="40"/>
+                        <lvc:CartesianChart x:Name="Chart3"/>
+                    </Grid>
+                </Grid>
         </Grid>
         <!-- Strona Ustawienia -->
         <!-- Strona Ustawienia -->
         <Grid Grid.Row="1" ShowGridLines="False" Visibility="Collapsed"  x:Name="strona_ust">
-            <TextBlock Margin="20, 10, 0, 0" Text="Nazwa użytkownika" FontSize="32" FontWeight="Bold"/>
+            <TextBlock Margin="20, 10, 0, 0" Text="Nazwa użytkownika" FontSize="32" FontWeight="Bold" x:Name="nazwauz"/>
             <TextBox Margin="20, 50, 0, 0" Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" FontWeight="Bold" x:Name="Username"/>
             <Button Content="Zmień" Margin="330, 50, 0, 0" Width="100" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" FontWeight="Bold" Click="zmien_Click"/>
             <local:RButton VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0, 0, 20, 20" Text="Twórcy" FontSize="32" FontWeight="Bold" Click="tworcy_Click">
@@ -178,6 +183,15 @@
                 <TextBlock Text="- Adrian Zaremba" FontSize="32"  VerticalAlignment="Top" Margin="0, 220, 0, 0" HorizontalAlignment="Center"/>
                 <TextBlock Text="pod opieką wychowawcy Pana Pawła Polakowskiego" FontWeight="SemiBold" FontSize="34"  VerticalAlignment="Top" Margin="0, 255, 0, 0" HorizontalAlignment="Center"/>
                 <Button Width="200" Height="50" Content="Zamknij" FontSize="32" FontWeight="Bold" VerticalAlignment="Bottom" Margin="10" Click="zamknijtw"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="powitaj" Visibility="Collapsed" Background="#7fbbbbbb">
+            <Grid Margin="200">
+                <Border Background="#aaaaaa" CornerRadius="40"/>
+                <TextBlock Text="Witaj!" FontSize="36" FontWeight="Bold" VerticalAlignment="Top" Margin="10" HorizontalAlignment="Center"/>
+                <TextBlock Text="Napisz jak mamy się do Ciebie zwracać:" FontWeight="SemiBold" FontSize="34"  VerticalAlignment="Top" Margin="0, 50, 0, 0" HorizontalAlignment="Center"/>
+                <TextBox VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" Height="40" FontSize="32" x:Name="wybraneimie"/>
+                <Button Width="200" Height="50" Content="Zatwierdź" FontSize="32" FontWeight="Bold" VerticalAlignment="Bottom" Margin="10" Click="zatwierdzimie"/>
             </Grid>
         </Grid>
     </Grid>
