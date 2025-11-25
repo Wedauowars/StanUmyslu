@@ -13,6 +13,21 @@
 
 ---
 
+## 😎 Dlaczego warto używać aplikacji *Stan Umysłu*?
+**Stan Umysłu** to Twoje centrum dowodzenia codziennym życiem - łączy zadania i samopoczucie w jednym przejrzystym miejscu, żebyś lepiej wiedział/a, kiedy działać, a kiedy odpuścić.
+To aplikacja, która nie ocenia - tylko pomaga ogarnąć chaos, zdbać o siebie i działać bardziej świadomie.
+
+### Co zyskujesz?
+- **Pełen obraz dnia** - Twoje zadania i Twój nastrój w jednym miejscu.
+- **Przejrzyste trendy** - wykresy pokazują, jak naprawdę sie czujesz na przestrzeni tygodnia.
+- **Lepszą efektywność** - łatwiej planujesz, bo rozumiesz, kiedy masz energię, a kiedy jej brakuje.
+- **Zdrowszą rutynę** - aplikacja wspierana, a nie narzuca. Budujesz nawyki naturalnie, bez żadnej presji.
+- **Większy spokój** - mniej chaosu w głowie, więcej kontroli nad własnym dniem.
+
+**Stan Umysłu** sprawia, że codzienność staje się lżejsza, a Ty - bardziej świadomy, zorganizowany i spokojny.
+To narzędzie, które po prostu robi różnicę.
+---
+
 ## 🎯 Problem, który rozwiązujemy
 - 📱 Większość narzędzi do monitorowania nastroju dostępna jest tylko na telefonach.  
 - 💻 Użytkownicy spędzają większość dnia przy komputerze.  
@@ -40,7 +55,8 @@
 ---
 
 ## 🚀 Plan rozwoju
-- 📱 Aplikacja mobilna  
+- 📱 Aplikacja mobilna
+- ⌚ Aplikacja na smartwatche  
 - 🖼️ Widget na pulpit i system powiadomień  
 - 📊 Realne statystyki miesięczne  
 - 📄 Eksport danych do PDF  
@@ -68,7 +84,7 @@ Program "Stan Umysłu" wykonali uczniowie Technikum nr 2 w Ostrowi Mazowieckiej,
 - Mateusz Mierzejewski  
 - Adrian Zaremba  
 
-Pod opieką wychowawcy klasy: Pan Paweł Polakowski
+Pod opieką wychowawcy klasy, Pana Pawła Polakowskiego
 
 ---
 
@@ -76,13 +92,3 @@ Pod opieką wychowawcy klasy: Pan Paweł Polakowski
 *do dodania*
 
 ---
-
-## 🌟 Dlaczego warto korzystać?
-**Stan Umysłu** pozwala:  
-- śledzić nastrój i aktywności w prosty sposób  
-- szybko analizować tygodniowe i miesięczne trendy  
-- świadomie planować dzień i poprawiać samopoczucie  
-Idealne dla osób, które dużo czasu spędzają przy komputerze i chcą lepiej zarządzać swoją produktywnością.  
-
----
-
