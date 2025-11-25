@@ -94,6 +94,9 @@ Pod opieką wychowawcy klasy, Pana Pawła Polakowskiego
 ---
 
 ## 📄 Instrukcja instalacji
-*do dodania*
+Instalacja aplikacji jest prosta, wystarczy wypakować folder "Stan Umysłu" z archiwum .zip, i uruchomić aplikację
+"StanUmyslu.exe". Po uruchomieniu może wyświetlić się komunikat że brakuje zależności .NET 8.0 Desktop Runtime.
+Aby rozwiązać ten błąd, wystarczy wejść w link który będzie podany w komunikacie, i zainstalować zależności
+które automatycznie się zaczną pobierać przy wejściu w link.
 
 ---
