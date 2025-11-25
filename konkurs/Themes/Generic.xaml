@@ -15,6 +15,7 @@
         <Setter Property="Height" Value="60"/>
         <Setter Property="Width" Value="180"/>
         <Setter Property="MinHeight" Value="60"/>
+        <Setter Property="FontSize" Value="18"/>
 
         <Setter Property="Template">
             <Setter.Value>
@@ -40,7 +41,7 @@
                                    Margin="1" RenderOptions.BitmapScalingMode="HighQuality"/>
 
                             <TextBlock Text="{TemplateBinding Text}"
-                                       FontSize="18"
+                                       FontSize="{TemplateBinding FontSize}"
                                        VerticalAlignment="Center"
                                        Foreground="{TemplateBinding Foreground}"/>
                         </StackPanel>

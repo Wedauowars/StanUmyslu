@@ -7,56 +7,45 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="Stan Umysłu" Height="720" Width="1280" MinHeight="700" MinWidth="800">
-    <Grid ShowGridLines="True" Background="#f2f2f2" x:Name="cont">
+    <Window.Resources>
+        <local:IconPathConverter x:Key="IconPathConverter"/>
+    </Window.Resources>
+    <Grid>
+    <Grid ShowGridLines="False" Background="#f2f2f2" x:Name="cont">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*" MinHeight="90"></RowDefinition>
             <RowDefinition Height="67.67*"></RowDefinition>
             <RowDefinition Height="0.2*" MinHeight="90"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" ShowGridLines="True" Background="#e9e9e9">
-            <Image Source="/res/Obrazki/Bright/logoNapis.png" Margin="5" RenderOptions.BitmapScalingMode="HighQuality"/>
+        <Grid Grid.Row="0" ShowGridLines="False" Background="#e9e9e9">
+            <Image Source="/res/Obrazki/ikonka.png" Margin="5" RenderOptions.BitmapScalingMode="HighQuality" />
             <TextBlock Text="🔥Passa: " FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30, 0, 0, 0" FontFamily="Comic Sans MS" x:Name="pasta"/>
-            <local:RButton Text="" Image="/res/Obrazki/Dark/trybNoc.png" CornerRadius="20" Width="80" Height="80" Grid.Column="0" Click="trybnoc_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0">
+            <local:RButton Text="" Image="/res/Obrazki/Bright/ustawieniaBlack.png" CornerRadius="20" Width="80" Height="80" Grid.Column="0" Click="ust_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0" BorderBrush="Black" BorderThickness="2">
                 <local:RButton.Background>
                     <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
-                        <GradientStop Color="#209bbf" Offset="0"/>
-                        <GradientStop Color="#7953ce" Offset="0.5"/>
-                        <GradientStop Color="#df00e0" Offset="1"/>
-                    </LinearGradientBrush>
-                </local:RButton.Background>
-            </local:RButton>
-            <local:RButton Text="" Image="/res/Obrazki/Bright/trybDzien.png" CornerRadius="20" Width="80" Height="80" Grid.Column="0" Click="ust_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 100, 0">
-                <local:RButton.Background>
-                    <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
-                        <GradientStop Color="#209bbf" Offset="0"/>
-                        <GradientStop Color="#7953ce" Offset="0.5"/>
-                        <GradientStop Color="#df00e0" Offset="1"/>
+                        
                     </LinearGradientBrush>
                 </local:RButton.Background>
             </local:RButton>
         </Grid>
         <!-- Strona główna -->
         <!-- Strona główna -->
-        <Grid Grid.Row="1" ShowGridLines="True" Visibility="Collapsed" x:Name="strona1">
+        <Grid Grid.Row="1" ShowGridLines="False" Visibility="Collapsed" x:Name="strona1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" ShowGridLines="True">
+            <Grid Grid.Column="0" ShowGridLines="False">
                 <Grid.RowDefinitions>
                     <RowDefinition MinHeight="90"></RowDefinition>
                     <RowDefinition Height="999*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Golden Gate Bridge ma 227m wysokości" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="30, 10, 0, 0" FontWeight="Bold" />
+                <TextBlock Text="Dzień dobry {%s}!" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="30, 10, 0, 0" FontWeight="Bold" />
             <TextBlock Text="Jak sie dziś czujesz?" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="24" Margin="30, 0, 0, 10"/>
                 <Grid Grid.Row="1">
                     <Grid Margin="30">
                         <Border Name="mask" Background="#e9e9e9" CornerRadius="20"/>
-                        <RadioButton Margin="20, 50, 0 ,0" FontSize="24">ok</RadioButton>
-                        <RadioButton Margin="20, 100, 0 ,0" FontSize="24">nie ok</RadioButton>
-                        <RadioButton Margin="20, 150, 0 ,0" FontSize="24">3</RadioButton>
-                        <RadioButton Margin="20, 200, 0 ,0" FontSize="24">4</RadioButton>
-                        <RadioButton Margin="20, 250, 0 ,0" FontSize="24">5s</RadioButton>
+                        <TextBlock Text="Notatka dla cb (3" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="32" FontWeight="Bold"/>
                     </Grid>
                 </Grid>
             </Grid>
@@ -70,81 +59,126 @@
         </Grid>
         <!-- Strona 2 -->
         <!-- Strona 2 -->
-        <Grid Grid.Row="1" ShowGridLines="True" Visibility="Visible" x:Name="strona2">
+        <Grid Grid.Row="1" ShowGridLines="False" Visibility="Visible" x:Name="strona2">
             <Grid.RowDefinitions>
-                <RowDefinition MinHeight="140"></RowDefinition>
+                <RowDefinition MinHeight="90"></RowDefinition>
                 <RowDefinition Height="999*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" ShowGridLines="True">
-                <TextBlock Text="Czas to tylko iluzja kontroli" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="48" Margin="30, 20, 0, 0" FontWeight="Bold" />
-                <TextBlock Text="a ty dajesz się kontrolować" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="32" Margin="30, 0, 0, 20"/>
+            <Grid Grid.Row="0" ShowGridLines="False">
+                <TextBlock Text="Twój nastrój" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" Margin="30, 10, 0, 0" FontWeight="Bold" />
+                <TextBlock Text="Jak się teraz czujesz?" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="24" Margin="30, 0, 0, 10"/>
             </Grid>
-            <Grid Grid.Row="1" ShowGridLines="True">
-                <TextBlock Text="2"/>
-                <Image Source="/res/wykres.png" Margin="20" Width="2000"/>
-            </Grid>
+                <Grid Grid.Row="1" ShowGridLines="False">
+                    <Grid Grid.Column="0"  Margin="20">
+                        <Border Background="#e9e9e9" CornerRadius="40"/>
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="/res/Obrazki/Bright/Emocje/1.png" Grid.Column="0" MouseLeftButtonDown="em1_MD"/>
+                            <TextBlock Text="Tragicznie" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="0" Margin="20"/>
+                            <Image Source="/res/Obrazki/Bright/Emocje/2.png" Grid.Column="1" MouseLeftButtonDown="em2_MD"/>
+                            <TextBlock Text="Słabo" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="1" Margin="20"/>
+                            <Image Source="/res/Obrazki/Bright/Emocje/3.png" Grid.Column="2" MouseLeftButtonDown="em3_MD"/>
+                            <TextBlock Text="Tak se" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="2" Margin="20"/>
+                            <Image Source="/res/Obrazki/Bright/Emocje/4.png" Grid.Column="3" MouseLeftButtonDown="em4_MD"/>
+                            <TextBlock Text="Dobrze" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="3" Margin="20"/>
+                            <Image Source="/res/Obrazki/Bright/Emocje/5.png" Grid.Column="4" MouseLeftButtonDown="em5_MD"/>
+                            <TextBlock Text="Świetnie" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="4" Margin="20"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
         </Grid>
         <!-- Strona 3 -->
         <!-- Strona 3 -->
-        <Grid Grid.Row="1" ShowGridLines="True" Visibility="Collapsed" x:Name="strona3">
+        <Grid Grid.Row="1" ShowGridLines="False" Visibility="Collapsed" x:Name="strona3">
             <Grid.RowDefinitions>
                 <RowDefinition MinHeight="140"></RowDefinition>
                 <RowDefinition Height="999*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" ShowGridLines="True">
-                <TextBlock Text="Na kamieniu siedzę" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="48" Margin="30, 20, 0, 0" FontWeight="Bold" />
-                <TextBlock Text="i filozofuję" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="32" Margin="30, 0, 0, 20"/>
+            <Grid Grid.Row="0" ShowGridLines="False">
+                <TextBlock Text="Statystyki" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="48" Margin="30, 20, 0, 0" FontWeight="Bold" />
+                <TextBlock Text="Ogólne statystyki sprzed 67 dni" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="32" Margin="30, 0, 0, 20"/>
             </Grid>
-            <Grid Grid.Row="1" ShowGridLines="True">
+            <Grid Grid.Row="1" ShowGridLines="False">
                 <local:Chart x:Name="Chart3"/>
             </Grid>
         </Grid>
         <!-- Strona Ustawienia -->
         <!-- Strona Ustawienia -->
-        <Grid Grid.Row="1" ShowGridLines="True" Visibility="Collapsed" x:Name="strona_ust">
-            <Image Source="/res/logo.png"/>
-            <TextBlock FontSize="55" Text="Lepiej skakać na słoiku" Grid.ColumnSpan="2" FontStyle="Italic" Margin="20, 20, 0, 0"/>
-            <TextBlock FontSize="35" Text="niż się uczyć w Ekonomiku" Grid.ColumnSpan="2" FontStyle="Italic" Margin="20, 90, 0, 0"/>
+        <Grid Grid.Row="1" ShowGridLines="False" Visibility="Collapsed"  x:Name="strona_ust">
+            <TextBlock Margin="20, 10, 0, 0" Text="Nazwa użytkownika" FontSize="32" FontWeight="Bold"/>
+            <TextBox Margin="20, 50, 0, 0" Width="300" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" FontWeight="Bold" x:Name="Username"/>
+            <Button Content="Zmień" Margin="330, 50, 0, 0" Width="100" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="32" FontWeight="Bold" Click="zmien_Click"/>
+            <local:RButton VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0, 0, 20, 20" Text="Twórcy" FontSize="32" FontWeight="Bold" Click="tworcy_Click">
+                <local:RButton.Background>
+                    <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
+                        <GradientStop Color="#209bbf" Offset="0"/>
+                        <GradientStop Color="#7953ce" Offset="0.5"/>
+                        <GradientStop Color="#df00e0" Offset="1"/>
+                    </LinearGradientBrush>
+                </local:RButton.Background>
+            </local:RButton>
         </Grid>
 
 
-        <Grid Grid.Row="2" ShowGridLines="False" Background="#e9e9e9">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="2" ShowGridLines="False" Background="#e9e9e9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
-            <local:RButton Text="" Image="/res/Obrazki/Bright/stronaGłówna.png" CornerRadius="20" Width="160" Height="80" Grid.Column="0" Click="RButton_Click_1">
-                <local:RButton.Background>
-                    <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
-                        <GradientStop Color="#209bbf" Offset="0"/>
-                        <GradientStop Color="#7953ce" Offset="0.5"/>
-                        <GradientStop Color="#df00e0" Offset="1"/>
-                    </LinearGradientBrush>
-                </local:RButton.Background>
-            </local:RButton>
+                <local:RButton Text="" Image="/res/Obrazki/Bright/stronaGłówna.png" CornerRadius="20" Width="160" Height="80" Grid.Column="0" Click="RButton_Click_1" x:Name="sg">
+                    <local:RButton.Background>
+                        <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
+                            <GradientStop Color="#209bbf" Offset="0"/>
+                            <GradientStop Color="#7953ce" Offset="0.5"/>
+                            <GradientStop Color="#df00e0" Offset="1"/>
+                        </LinearGradientBrush>
+                    </local:RButton.Background>
+                </local:RButton>
 
-            <local:RButton Text="" Image="/res/Obrazki/Bright/Emocje/4.png" CornerRadius="20" Width="160" Height="80" Grid.Column="1" Click="RButton_Click_2">
-                <local:RButton.Background>
-                    <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
-                        <GradientStop Color="#209bbf" Offset="0"/>
-                        <GradientStop Color="#7953ce" Offset="0.5"/>
-                        <GradientStop Color="#df00e0" Offset="1"/>
-                    </LinearGradientBrush>
-                </local:RButton.Background>
-            </local:RButton>
+                <local:RButton Text="" Image="/res/Obrazki/Bright/Emocje/4.png" CornerRadius="20" Width="160" Height="80" Grid.Column="1" Click="RButton_Click_2" x:Name="s2">
+                    <local:RButton.Background>
+                        <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
+                            <GradientStop Color="#209bbf" Offset="0"/>
+                            <GradientStop Color="#7953ce" Offset="0.5"/>
+                            <GradientStop Color="#df00e0" Offset="1"/>
+                        </LinearGradientBrush>
+                    </local:RButton.Background>
+                </local:RButton>
 
-            <local:RButton Text="" Image="/res/Obrazki/Bright/Statystyki.png" CornerRadius="20" Width="160" Height="80" Grid.Column="2" Click="RButton_Click_3">
-                <local:RButton.Background>
-                    <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
-                        <GradientStop Color="#209bbf" Offset="0"/>
-                        <GradientStop Color="#7953ce" Offset="0.5"/>
-                        <GradientStop Color="#df00e0" Offset="1"/>
-                    </LinearGradientBrush>
-                </local:RButton.Background>
-            </local:RButton>
-
+                <local:RButton Text="" Image="/res/Obrazki/Bright/Statystyki.png" CornerRadius="20" Width="160" Height="80" Grid.Column="2" Click="RButton_Click_3" x:Name="s3">
+                    <local:RButton.Background>
+                        <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
+                            <GradientStop Color="#209bbf" Offset="0"/>
+                            <GradientStop Color="#7953ce" Offset="0.5"/>
+                            <GradientStop Color="#df00e0" Offset="1"/>
+                        </LinearGradientBrush>
+                    </local:RButton.Background>
+                </local:RButton>
+            </Grid>
+        </Grid>
+        <Grid x:Name="Tworcy" Visibility="Collapsed" Background="#7fbbbbbb">
+            <Grid Margin="100">
+                <Border Background="#aaaaaa" CornerRadius="40"/>
+                <TextBlock Text="Twórcy aplikacji 'Stan Umysłu'" FontSize="36" FontWeight="Bold" VerticalAlignment="Top" Margin="10" HorizontalAlignment="Center"/>
+                <TextBlock Text="Uczniowie Technikum nr. 2 w Ostrowi Mazowieckiej, klasa 1TIP:" FontWeight="SemiBold" FontSize="34"  VerticalAlignment="Top" Margin="0, 45, 0, 0" HorizontalAlignment="Center"/>
+                <TextBlock Text="- Krystian Kręciewski" FontSize="32"  VerticalAlignment="Top" Margin="0, 80, 0, 0" HorizontalAlignment="Center"/>
+                <TextBlock Text="- Jakub Ambroziak" FontSize="32"  VerticalAlignment="Top" Margin="0, 115, 0, 0" HorizontalAlignment="Center"/>
+                <TextBlock Text="- Kordian Skarzyński" FontSize="32"  VerticalAlignment="Top" Margin="0, 150, 0, 0" HorizontalAlignment="Center"/>
+                <TextBlock Text="- Mateusz Mierzejewski" FontSize="32"  VerticalAlignment="Top" Margin="0, 185, 0, 0" HorizontalAlignment="Center"/>
+                <TextBlock Text="- Adrian Zaremba" FontSize="32"  VerticalAlignment="Top" Margin="0, 220, 0, 0" HorizontalAlignment="Center"/>
+                <TextBlock Text="pod opieką wychowawcy Pana Pawła Polakowskiego" FontWeight="SemiBold" FontSize="34"  VerticalAlignment="Top" Margin="0, 255, 0, 0" HorizontalAlignment="Center"/>
+                <Button Width="200" Height="50" Content="Zamknij" FontSize="32" FontWeight="Bold" VerticalAlignment="Bottom" Margin="10" Click="zamknijtw"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

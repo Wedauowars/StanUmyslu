@@ -7,6 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <ApplicationIcon>ikonka.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -40,6 +41,7 @@
     <None Remove="res\Obrazki\Bright\stronaGłówna.png" />
     <None Remove="res\Obrazki\Bright\trybDzien.png" />
     <None Remove="res\Obrazki\Bright\trybNoc.png" />
+    <None Remove="res\Obrazki\Bright\ustawieniaBlack.png" />
     <None Remove="res\Obrazki\Dark\Emocje\1.png" />
     <None Remove="res\Obrazki\Dark\Emocje\2.png" />
     <None Remove="res\Obrazki\Dark\Emocje\3.png" />
@@ -71,11 +73,17 @@
 
   <ItemGroup>
     <Page Remove="LChart.xaml" />
+    <Page Remove="Themes\Dark.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ikonka.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiveCharts" Version="0.9.7" />
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -98,6 +106,7 @@
     <Resource Include="res\Obrazki\Bright\stronaGłówna.png" />
     <Resource Include="res\Obrazki\Bright\trybDzien.png" />
     <Resource Include="res\Obrazki\Bright\trybNoc.png" />
+    <Resource Include="res\Obrazki\Bright\ustawieniaBlack.png" />
     <Resource Include="res\Obrazki\Dark\Emocje\1.png" />
     <Resource Include="res\Obrazki\Dark\Emocje\2.png" />
     <Resource Include="res\Obrazki\Dark\Emocje\3.png" />

@@ -38,5 +38,13 @@ namespace konkurs {
 
         public static readonly DependencyProperty CornerRadiusProperty =
             DependencyProperty.Register("CornerRadius", typeof(double), typeof(RButton), new PropertyMetadata(20.0));
+
+        public new double FontSize {
+            get { return (double)GetValue(FontSizeProperty); }
+            set { SetValue(FontSizeProperty, value); }
+        }
+
+        public static new readonly DependencyProperty FontSizeProperty =
+            DependencyProperty.Register("FontSize", typeof(double), typeof(RButton), new PropertyMetadata(20.0));
     }
 }
