@@ -11,7 +11,7 @@ Chcieliśmy stworzyć narzędzie, które naprawdę pamaga - dlatego zbudowaliśm
 
 **Stan Umysłu** to desktopowa aplikacja wspierająca zdrowie psychiczne i produktywność.  
 🖱️ Dodaj swój nastrój 1 kliknięciem, obserwuj swoje aktywności i śledź trendy w prosty sposób.  
-📊 Wszystko w jednym miejscu, bez rozpraszania.  
+📊 Sprawdź wszystko w jednym miejscu, bez rozpraszania.  
 💡 Jedno kliknięcie = jeden wpis. Zero chaosu.
 
 ---
